@@ -1,6 +1,8 @@
 const constants = {
-  ACTION_ONE: 'ACTION_ONE',
-  ACTION_TWO: 'ACTION_TWO'
+  ADD_TASK: 'ADD_TASK',
+  EDIT_TASK: 'EDIT_TASK',
+  SAVE_TASK: 'SAVE_TASK',
+  REMOVE_TASK: 'REMOVE_TASK'
 };
 
 export default constants;

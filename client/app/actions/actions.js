@@ -1,9 +1,30 @@
 import C from '../constants';
+import uuid from 'uuid';
 
-export function actionOne () {
-  return { type: C.ACTION_ONE }
-}
+export const addTask = (name, date=new Date()) =>
+  ({
+    type: C.ADD_TASK,
+    id: uuid.v4(),
+    name,
+    date
+  });
 
-export function actionTwo () {
-  return { type: C.ACTION_TWO }
-}
+export const editTask = (id) =>
+  ({
+    type: C.EDIT_TASK,
+    id
+  });
+
+export const saveTask = (id, name, date=new Date()) =>
+  ({
+    type: C.SAVE_TASK,
+    id,
+    name,
+    date
+  });
+
+export const removeTask = (id) =>
+  ({
+    type: C.REMOVE_TASK,
+    id: id
+  });

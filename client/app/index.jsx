@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 // react redux routing
 import createHistory from 'history/createBrowserHistory'
@@ -13,7 +13,10 @@ import App from './components/App';
 import { reducers } from './store/index';
 
 // initial state
-const initialState = { };
+const initialState = {
+  tasks: [],
+  sort: 'SORT_BY_DATE'
+};
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history = createHistory();
