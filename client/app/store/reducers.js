@@ -16,8 +16,9 @@ export const task = (state = {}, action) => {
         state;
 
     case C.SAVE_TASK:
+      let { name, date } = action;
       return (state.id === action.id) ?
-        {...state, name: action.name, date: action.date, disabled: true} :
+        {...state, name, date, disabled: true} :
         state;
 
     default:

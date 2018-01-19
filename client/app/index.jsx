@@ -25,10 +25,19 @@ const middleware = routerMiddleware(history);
 
 // create the store
 const createStoreWithMiddleware = applyMiddleware(middleware)(createStore);
-const store = createStoreWithMiddleware(reducers, initialState);
+const store = createStoreWithMiddleware(
+  reducers,
+  (localStorage['react-tasks-list']) ?
+    JSON.parse(localStorage['react-tasks-list']) :
+    initialState
+);
 
 // styles
 import '../public/styles/main';
+
+store.subscribe(() => {
+  localStorage['react-tasks-list'] = JSON.stringify(store.getState())
+});
 
 ReactDOM.render(
   <MuiThemeProvider>
