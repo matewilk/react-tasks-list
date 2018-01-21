@@ -26,7 +26,7 @@ export const task = (state = {}, action) => {
   }
 };
 
-export const tasks = (state = {}, action) => {
+export const tasks = (state = [], action) => {
   switch (action.type) {
     case C.ADD_TASK:
       return [
@@ -55,6 +55,11 @@ export const tasks = (state = {}, action) => {
   }
 };
 
-export const sort = (state='SORT_BY_DATE', action) => {
-  return state;
+export const sort = (state='date', action={ type: null }) => {
+  switch(action.type) {
+    case C.SORT_TASKS:
+      return action.sortBy;
+    default:
+      return state;
+  }
 };

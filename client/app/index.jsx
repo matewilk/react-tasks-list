@@ -15,7 +15,7 @@ import { reducers } from './store/index';
 // initial state
 const initialState = {
   tasks: [],
-  sort: 'SORT_BY_DATE'
+  sort: 'date'
 };
 
 // Create a history of your choosing (we're using a browser history in this case)

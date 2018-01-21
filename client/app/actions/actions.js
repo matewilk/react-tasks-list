@@ -28,3 +28,9 @@ export const removeTask = (id) =>
     type: C.REMOVE_TASK,
     id: id
   });
+
+export const sortTasks = (sortBy='date') =>
+  ({
+    type: C.SORT_TASKS,
+    sortBy
+  });
