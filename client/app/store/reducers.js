@@ -4,6 +4,7 @@ export const task = (state = {}, action) => {
   switch (action.type) {
     case C.ADD_TASK:
       return {
+        ...state,
         id: action.id,
         name: action.name,
         date: action.date,

@@ -3,7 +3,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
+// material-ui
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import lightBlue from 'material-ui/colors/lightBlue';
+import pink from 'material-ui/colors/pink';
+import Reboot from 'material-ui/Reboot';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: lightBlue[300],
+      main: lightBlue[500],
+      dark: lightBlue[700],
+    },
+    secondary: {
+      light: pink[300],
+      main: pink[500],
+      dark: pink[700],
+    },
+  },
+});
 
 // react redux routing
 import createHistory from 'history/createBrowserHistory'
@@ -40,7 +60,7 @@ store.subscribe(() => {
 });
 
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider theme={theme}>
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <App />

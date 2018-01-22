@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'react-flexbox-grid';
+import { TextField, Button } from 'material-ui';
+import { Row } from 'react-flexbox-grid';
 
 import { addTask } from "../actions/actions";
 
@@ -18,22 +19,26 @@ const AddTaskForm = ({onTaskAdd=f=>f}) => {
   return (
     <form onSubmit={submit}>
       <Row center='xs'>
-        <input
+        <TextField
           type='text'
-          ref={input => _name = input}
+          name='name'
+          inputProps={{ref: node => _name = node}}
         />
       </Row>
       <Row center='xs'>
-        <input
-          ref={input => _date = input}
+        <TextField
+          inputProps={{ref: node => _date = node}}
           type='date'
+          name='date'
         />
       </Row>
       <Row center='xs'>
-        <button
+        <Button
+          raised
+          color='secondary'
           type='submit'
           >Add
-        </button>
+        </Button>
       </Row>
     </form>
   )
