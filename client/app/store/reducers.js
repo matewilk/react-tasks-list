@@ -64,3 +64,12 @@ export const sort = (state='date', action={ type: null }) => {
       return state;
   }
 };
+
+export const filter = (state='', action={ type: null }) => {
+  switch(action.type) {
+    case C.FILTER_TASKS:
+      return action.filter;
+    default:
+      return state;
+  }
+};

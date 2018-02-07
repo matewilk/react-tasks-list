@@ -34,3 +34,9 @@ export const sortTasks = (sortBy='date') =>
     type: C.SORT_TASKS,
     sortBy
   });
+
+export const filterTasks = (filter='') =>
+  ({
+    type: C.FILTER_TASKS,
+    filter
+  });

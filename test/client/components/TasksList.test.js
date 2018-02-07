@@ -16,7 +16,9 @@ describe('<TasksList /> UI Component', () => {
           {id: 1, name: 'wash dishes', date: new Date()},
           {id: 2, name: 'learn react', date: new Date()},
           {id: 3, name: 'read book', date: new Date()}
-        ]
+        ],
+        sort: 'date',
+        filter: ''
       }))
   };
 
